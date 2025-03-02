@@ -3,20 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        plugins: [daisyui],
-    };
-</script>
-<script src="https://cdn.jsdelivr.net/npm/daisyui@5"></script>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {},
+        },
+        plugins: [daisyui],
+      };
+    </script>
+
+    <!-- DaisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@5"></script>
+
     <title>main</title>
+
     <style>
       .truncate-text {
         display: -webkit-box;
@@ -28,6 +31,7 @@
       }
     </style>
   </head>
+
   <body>
     <header class="container mx-auto">
       <nav>
@@ -43,7 +47,7 @@
               class="flex bg-slate-300 text-center items-center gap-3 rounded-full p-3"
             >
               <img src="./assets/checkbox.png" alt="" />
-              <h1 class="font-bold text-3xl">23</h1>
+              <h1 class="font-bold text-3xl" id="completed-task">23</h1>
             </div>
             <div class="gap-3 rounded-full bg-slate-300 p-2">
               <img id="color-icon" src="./assets/theme-btn.png" alt="" />
@@ -63,7 +67,7 @@
               </div>
               <div>
                 <p class="text-xl">Task assigned</p>
-                <h1 class="text-2xl font-bold">05</h1>
+                <h1 class="text-2xl font-bold" id="count-number">06</h1>
               </div>
             </div>
             <div
@@ -154,6 +158,7 @@
                 </div>
                 <button
                   class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg"
+                  id="btn-task-2"
                   type="submit"
                 >
                   Completed
@@ -189,6 +194,7 @@
                 </div>
                 <button
                   class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg"
+                  id="btn-task-3"
                   type="submit"
                 >
                   Completed
@@ -223,6 +229,7 @@
                 </div>
                 <button
                   class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg"
+                  id="btn-task-4"
                   type="submit"
                 >
                   Completed
@@ -258,6 +265,7 @@
                 </div>
                 <button
                   class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg"
+                  id="btn-task-5"
                   type="submit"
                 >
                   Completed
@@ -292,6 +300,7 @@
                 </div>
                 <button
                   class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg"
+                  id="btn-task-6"
                   type="submit"
                 >
                   Completed
@@ -310,65 +319,97 @@
             <p>activity log</p>
           </div>
           <div>
-            <button class="btn bg-green-900 text-white p-3" type="reset">
+            <button
+              class="btn bg-green-900 text-white p-3 rounded-xl" id="clear-histry"
+              type="reset"
+            >
               Clear history
             </button>
-            <div id="comment-section" class=""></div>
+            <div id="comment-section" class="space-y-5 mt-10"></div>
           </div>
         </div>
       </div>
     </main>
     <script src="/js/java.js"></script>
     <script>
-            document.getElementById("go-to-main").addEventListener('click', function () {
+      document
+        .getElementById("go-to-main")
+        .addEventListener("click", function () {
           window.location.href = "main.html";
-      })
-
+        });
 
       function getRandomColor() {
-              const letters = "0123456789ABCDEF";
-              let color = "#";
-              for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-              }
-              return color;
-            }
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
 
-            document.getElementById("color-icon").addEventListener("click", function () {
-              const randomColor = getRandomColor();
-              document.body.style.backgroundColor = randomColor;
-            });
+      document
+        .getElementById("color-icon")
+        .addEventListener("click", function () {
+          const randomColor = getRandomColor();
+          document.body.style.backgroundColor = randomColor;
+        });
 
+      let sum = 0;
 
-
-            let sum = 0;
-function task_completed(buttonId) {
-    document.getElementById(buttonId).addEventListener("click", function () {
-        this.style.backgroundColor = "gray";
-        this.innerText = "Completed ✅";
-        alert("Board updated successfully");
-        sum++;
-
-        if (sum === 6) {
-            alert("All tasks completed 🎉");
+      function task_completed(buttonId) {
+        const button = document.getElementById(buttonId);
+        if (!button) {
+          console.error(`Button with ID '${buttonId}' not found`);
+          return;
         }
 
-        // Add activity log
-        const container = document.getElementById("comment-section");
-        const p = document.createElement("h3");
-        p.innerText = `Task "${this.parentElement.parentElement.querySelector('h2').innerText}" completed!`;
-        p.classList.add("text-green-700", "font-bold");
-        container.appendChild(p);
-    });
-}
+        button.addEventListener("click", function () {
+          this.style.backgroundColor = "gray";
+          this.disabled = true;
+          alert("Board updated successfully");
 
-// Attach event listeners to all task buttons
-document.querySelectorAll("[id^='btn-task']").forEach((btn) => {
-    task_completed(btn.id);
+          sum++;
+          if (sum === 6) {
+            alert("All tasks completed!");
+          }
+
+          const container = document.getElementById("comment-section");
+          const p = document.createElement("h3");
+          p.innerText = "Task " + sum + " completed on 21 March 2025";
+
+          p.classList.add(
+            "text-black-700",
+            "font-bold",
+            "bg-white",
+            "rounded-xl",
+            "p-5"
+          );
+          container.appendChild(p);
+          const numberElement = document.getElementById("count-number");
+let number = parseInt(numberElement.innerText)
+
+number--; 
+numberElement.innerText = number;
+
+const numberElementx = document.getElementById("completed-task");
+let numberx = parseInt(numberElementx.innerText)
+
+numberx++; 
+numberElementx.innerText = numberx;
+
+        });
+      }
+
+      task_completed("btn-task-1");
+      task_completed("btn-task-2");
+      task_completed("btn-task-3");
+      task_completed("btn-task-4");
+      task_completed("btn-task-5");
+      task_completed("btn-task-6");
+      document.getElementById("clear-histry").addEventListener('click', function() {
+    document.getElementById("comment-section").innerText = '';
 });
 
-          task_completed("btn-task-1");
-      }
     </script>
   </body>
 </html>
