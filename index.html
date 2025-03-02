@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      tailwind.config = {
+        plugins: [daisyui],
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@5"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>main</title>
+    <style>
+        .truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3em;
+}
+
+    </style>
+  </head>
+  <body >
+    <header class="container mx-auto">
+      <nav>
+        <div
+          class="flex container bg-slate-200 rounded-xl px-5 py-5 my-5 justify-between"
+        >
+          <div class="flex text-center items-center gap-3">
+            <img src="./assets/logo.png" alt="" />
+            <h1 class="text-3xl">Dev <span class="font-bold">Board</span></h1>
+          </div>
+          <div class="flex text-center items-center gap-3">
+            <div
+              class="flex bg-slate-300 text-center items-center gap-3 rounded-full p-3"
+            >
+              <img src="./assets/checkbox.png" alt="" />
+              <h1 class="font-bold text-3xl">23</h1>
+            </div>
+            <div class="gap-3 rounded-full bg-slate-300 p-2">
+              <img id="color-icon" src="./assets/theme-btn.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container mx-auto">
+      <div class="flex gap-4">
+
+
+        <!-- task to date -->
+       <div class="bg-slate-300 rounded-xl p-2">
+        <div class="flex justify-between gap-3 flex-1  rounded-xl">
+            <div class="bg-slate-200 rounded-xl flex gap-3 p-3 items-center">
+              <div class="bg-slate-300 rounded-full p-4">
+                <img src="./assets/checkbox.png" alt="" />
+              </div>
+              <div>
+                <p class="text-xl">Task assigned</p>
+                <h1 class="text-2xl font-bold">05</h1>
+              </div>
+            </div>
+            <div
+              id="go-to-main"
+              class="bg-slate-200 rounded-xl flex gap-3 p-3 items-center flex-1 bg-gradient-to-r from-green-800 to-green-400"
+            >
+              <div class="p-4">
+                <img src="./assets/board.png" alt="" />
+              </div>
+              <div class="text-white">
+                <p class="text-2xl">Discover Something</p>
+                <h1 class="text-2xl">New Today!</h1>
+              </div>
+            </div>
+            <div class="bg-slate-200 rounded-xl flex gap-3 p-3 items-center">
+              <div class="bg-slate-300 rounded-full p-4">
+                <img src="./assets/calender.png" alt="" />
+              </div>
+              <div>
+                <p class="text-xl">Wed ,</p>
+                <h1 class="text-2xl font-bold">Jul 28 2025</h1>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-y-8 gap-x-8 my-12">
+            <!-- card-1 -->
+
+
+            <div class=" bg-white border border-gray-300 rounded-xl p-5 shadow-md space-y-3">
+                <!-- Title -->
+                <span class="bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-1 rounded-lg">
+                    ShopEase
+                </span>
+            
+                <!-- Task Name -->
+                <h2 class="text-lg font-bold">Fix Mobile Button Issue </h2>
+            
+                <!-- Task Description -->
+                <p class="text-gray-600 text-sm bg-gray-100 p-3 rounded-lg ">
+                    Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+and ensure onClick works properly
+                </p>
+            
+                <!-- Deadline & Status -->
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500">
+                        <p>Deadline</p>
+                        <p class="font-bold text-black">21 March 2025</p>
+                    </div>
+                    <button class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg " type="submit" id="btn-task-1">
+                        Completed
+                    </button>
+                </div>
+            </div>
+            <!-- card 2 -->
+
+
+            <div class="bg-white border border-gray-300 rounded-xl p-5 shadow-md  space-y-3">
+                <!-- Title -->
+                <span class="bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-1 rounded-lg">
+                  CloudSync
+                </span>
+            
+                <!-- Task Name -->
+                <h2 class="text-lg font-bold">Add Dark Mode</h2>
+            
+                <!-- Task Description -->
+                <p class="text-gray-600 text-sm bg-gray-100 p-3 rounded-lg">
+                  Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth transition effect.
+                </p>
+            
+                <!-- Deadline & Status -->
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500">
+                        <p>Deadline</p>
+                        <p class="font-bold text-black">21 March 2025</p>
+                    </div>
+                    <button class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg " type="submit">
+                        Completed
+                    </button>
+                </div>
+            </div>
+            <!-- card-3 -->
+
+            <div class="bg-white border border-gray-300 rounded-xl p-5 shadow-md  space-y-3">
+                <!-- Title -->
+                <span class="bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-1 rounded-lg">
+                  SwiftPay
+                </span>
+            
+                <!-- Task Name -->
+                <h2 class="text-lg font-bold">Optimize  Home page </h2>
+            
+                <!-- Task Description -->
+                <p class="text-gray-600 text-sm bg-gray-100 p-3 rounded-lg">
+                  Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                  and ensure onClick works properly
+                </p>
+            
+                <!-- Deadline & Status -->
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500">
+                        <p>Deadline</p>
+                        <p class="font-bold text-black">21 March 2025</p>
+                    </div>
+                    <button class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg " type="submit">
+                        Completed
+                    </button>
+                </div>
+            </div>
+            <!-- card-4 -->
+            <div class="bg-white border border-gray-300 rounded-xl p-5 shadow-md  space-y-3">
+                <!-- Title -->
+                <span class="bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-1 rounded-lg">
+                  Meta
+                </span>
+            
+                <!-- Task Name -->
+                <h2 class="text-lg font-bold">Add new emoji 🤲</h2>
+            
+                <!-- Task Description -->
+                <p class="text-gray-600 text-sm bg-gray-100 p-3 rounded-lg">
+                   Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+and ensure onClick works properly
+                </p>
+            
+                <!-- Deadline & Status -->
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500">
+                        <p>Deadline</p>
+                        <p class="font-bold text-black">21 March 2025</p>
+                    </div>
+                    <button class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg " type="submit">
+                        Completed
+                    </button>
+                </div>
+            </div>
+            <!-- card-5 -->
+
+
+            <div class="bg-white border border-gray-300 rounded-xl p-5 shadow-md  space-y-3">
+                <!-- Title -->
+                <span class="bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-1 rounded-lg">
+                    Google LLC
+                </span>
+            
+                <!-- Task Name -->
+                <h2 class="text-lg font-bold">Integrate OpenAI API </h2>
+            
+                <!-- Task Description -->
+                <p class="text-gray-600 text-sm bg-gray-100 p-3 rounded-lg">
+                  Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                </p>
+            
+                <!-- Deadline & Status -->
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500">
+                        <p>Deadline</p>
+                        <p class="font-bold text-black">21 March 2025</p>
+                    </div>
+                    <button class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg " type="submit">
+                        Completed
+                    </button>
+                </div>
+            </div>
+            <!-- card-6 -->
+            <div class="bg-white border border-gray-300 rounded-xl p-5 shadow-md  space-y-3">
+                <!-- Title -->
+                <span class="bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-1 rounded-lg">
+                  Glassdoar
+                </span>
+            
+                <!-- Task Name -->
+                <h2 class="text-lg font-bold">Improve Job searching </h2>
+            
+                <!-- Task Description -->
+                <p class="text-gray-600 text-sm bg-gray-100 p-3 rounded-lg">
+                  Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                  and ensure onClick works properly.
+                </p>
+            
+                <!-- Deadline & Status -->
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500">
+                        <p>Deadline</p>
+                        <p class="font-bold text-black">21 March 2025</p>
+                    </div>
+                    <button class="bg-green-500 text-white text-sm px-4 py-2 rounded-lg " type="submit">
+                        Completed
+                    </button>
+                </div>
+            </div>
+                                                                        
+          </div>
+       </div>
+
+        <!-- comment section -->
+        <div class="bg-slate-300 items-center  rounded-xl text-center space-y-3 p-5 min-w-80">
+          <div class="flex gap-2 text-center items-center justify-center">
+            <img src="./assets/activity.png" alt="" />
+            <p>activity log</p>
+          </div>
+          <div>
+            <button class="btn bg-green-900 text-white p-3" type="reset">
+              Clear history
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/java.js"></script>
+    <script>
+      document.getElementById("go-to-main").addEventListener('click', function () {
+    window.location.href = "main.html";
+    console.log("clicked"); 
+})
+document.getElementById("btn-task-1").addEventListener('click',function(){
+    alert("task completed")
+})
+function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      document.getElementById("color-icon").addEventListener("click", function () {
+        const randomColor = getRandomColor();
+        document.body.style.backgroundColor = randomColor;
+      });
+    </script>
+  </body>
+</html>

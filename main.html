@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      tailwind.config = {
+        plugins: [daisyui],
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@5"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Blogs</title>
+  </head>
+  <body class="container mx-auto">
+    <!-- header -->
+    <header>
+      <nav>
+        <div
+          class="flex container bg-slate-200 rounded-xl px-5 py-5 my-5 justify-between"
+        >
+          <div class="flex text-center items-center gap-3">
+            <img src="./assets/logo.png" alt="" />
+            <h1 class="text-3xl">Dev <span class="font-bold">Board</span></h1>
+          </div>
+          <div class="flex text-center items-center gap-3">
+            <div>
+                <button id="main-btn" class="btn bg-violet-700 rounded-xl p-4 text-white" type="button">Back to desk</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <h1 class="justify-center items-center font-bold text-3xl text-center my-5">Blogs</h1>
+    <!-- main -->
+     <main>
+        <div class="space-y-4">
+            <div class="space-y-2 rounded-xl bg-slate-300 p-4">
+                <h1 class="text-2xl font-bold ">
+                  Question-1: What are the different ways to select an element in the DOM?
+                </h1>
+                <hr>
+                <p>
+                  You can select elements in the DOM using methods like getElementById("id"), getElementsByClassName("class"), getElementsByTagName("tag"), querySelector("selector"), and querySelectorAll("selector"). These allow you to access and manipulate specific elements in your webpage.
+                </p>
+            </div>
+            <div class="space-y-2 rounded-xl bg-slate-300 p-4">
+              <h1 class="text-2xl font-bold ">
+                Question-2: What is the difference between innerHTML, innerText, and textContent ?
+              </h1>
+              <hr>
+              <p>
+                innerHTML: Gets or sets the HTML content inside an element, including tags.
+innerText: Gets or sets only the visible text inside an element, ignoring hidden elements and extra spaces.
+textContent: Gets or sets all text inside an element, including hidden elements, but without parsing HTML.
+              </p>
+          </div>
+          <div class="space-y-2 rounded-xl bg-slate-300 p-4">
+            <h1 class="text-2xl font-bold ">
+              Question-3: What is event delegation in the DOM?
+            </h1>
+            <hr>
+            <p>
+              Event delegation is a technique in the DOM where a parent element listens for events on its child elements using event bubbling. Instead of adding event listeners to multiple child elements, a single listener is attached to the parent to handle events efficiently.
+            </p>
+        </div>
+        <div class="space-y-2 rounded-xl bg-slate-300 p-4">
+          <h1 class="text-2xl font-bold ">
+            Question-4: What is event bubbling in the DOM?
+          </h1>
+          <hr>
+          <p>
+            Event bubbling is a DOM mechanism where an event starts from the target element and propagates up through its ancestors in the hierarchy. It allows event handlers on parent elements to respond to events triggered on their child elements.
+          </p>
+      </div>
+      <div class="space-y-2 rounded-xl bg-slate-300 p-4">
+        <h1 class="text-2xl font-bold ">
+          Question-5: How do you create, add, and remove elements using JavaScript?
+        </h1>
+        <hr>
+        <p>
+          Create an element: Use document.createElement("tag").
+Add an element: Use appendChild(), prepend(), or insertBefore().
+Remove an element: Use removeChild() or element.remove().
+        </p>
+    </div>
+        </div>
+     </main>
+     <script src="./js/java.js"></script>
+  </body>
+</html>
